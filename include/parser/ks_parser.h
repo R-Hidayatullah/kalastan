@@ -2,10 +2,10 @@
 #define KS_PARSER_H
 
 #include "kalastan.h"
-#include "ks_header.h"
-#include "ks_mft_header.h"
-#include "ks_mft_data.h"
-#include "ks_mft_index.h"
+#include "parser/ks_header.h"
+#include "parser/ks_mft_header.h"
+#include "parser/ks_mft_data.h"
+#include "parser/ks_mft_index.h"
 static const size_t MFT_ENTRY_INDEX_NUM = 1;
 
 #pragma pack(push, 1)

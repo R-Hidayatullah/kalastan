@@ -9,5 +9,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include_directories(include)
 
-add_executable(kalastan src/main.cpp src/ks_parser.cpp)
+add_executable(kalastan src/main.cpp src/parser/ks_parser.cpp)
 
