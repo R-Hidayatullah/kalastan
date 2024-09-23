@@ -25,6 +25,86 @@ KSArchive KSParser::loadFromFile()
     return ks_archive_data;
 }
 
+std::vector<uint8_t> KSParser::extractMFTData(ArchiveId number_type, uint32_t number)
+{
+    size_t index_number = 0;
+    bool found = false;
+
+    // Search for the appropriate entry based on number_type
+    switch (number_type)
+    {
+    case FileId:
+        for (size_t i = 0; i < ks_archive_data.mft_index_data.size(); i++)
+        {
+            if (ks_archive_data.mft_index_data[i].file_id == number)
+            {
+                std::cout << "Found!" << std::endl;
+                std::cout << "MFT Index Entry " << i << ":" << std::endl;
+                std::cout << "File ID: " << ks_archive_data.mft_index_data[i].file_id << std::endl;
+                std::cout << "Base ID: " << ks_archive_data.mft_index_data[i].base_id << std::endl;
+                index_number = i;
+                found = true;
+                break;
+            }
+        }
+        break;
+    case BaseId:
+        for (size_t i = 0; i < ks_archive_data.mft_index_data.size(); i++)
+        {
+            if (ks_archive_data.mft_index_data[i].base_id == number)
+            {
+                std::cout << "Found!" << std::endl;
+                std::cout << "MFT Index Entry " << i << ":" << std::endl;
+                std::cout << "File ID: " << ks_archive_data.mft_index_data[i].file_id << std::endl;
+                std::cout << "Base ID: " << ks_archive_data.mft_index_data[i].base_id << std::endl;
+                index_number = i;
+                found = true;
+                break;
+            }
+        }
+        break;
+    default:
+        throw std::invalid_argument("Invalid number_type provided.");
+    }
+
+    // Ensure that the entry was found
+    if (!found)
+    {
+        throw std::runtime_error("MFT entry not found!");
+    }
+
+    // Get the MFT data corresponding to the found index
+    const KSMFTData &mft_entry = ks_archive_data.mft_data[index_number];
+
+    // Check if the file is compressed
+    if (mft_entry.compression_flag != 0)
+    {
+        std::cout << "File is compressed!" << std::endl;
+    }
+
+    // Seek to the file offset and read the data
+    fileStream.seekg(mft_entry.offset, std::ios::beg);
+    if (!fileStream.good())
+    {
+        throw std::runtime_error("Failed to seek to file offset!");
+    }
+
+    size_t mft_data_size = mft_entry.size;
+    std::vector<uint8_t> buffer(mft_data_size);
+
+    std::cout << "Buffer size: " << mft_data_size << std::endl;
+    fileStream.read(reinterpret_cast<char *>(buffer.data()), mft_data_size);
+
+    // Check if the read was successful
+    if (!fileStream.good())
+    {
+        throw std::runtime_error("Failed to read data into buffer!");
+    }
+
+    // Return the buffer containing the file data
+    return buffer;
+}
+
 void KSParser::readHeader()
 {
     fileStream.read(reinterpret_cast<char *>(&ks_archive_data.dat_header), sizeof(KSHeader));
@@ -109,14 +189,5 @@ void KSParser::readMFTIndex()
         {
             throw std::runtime_error("Failed to read MFT index.");
         }
-        // size_t find_file = 970673;
-        // if (ks_archive_data.mft_index_data[i].file_id == find_file || ks_archive_data.mft_index_data[i].base_id == find_file)
-        // {
-        //     // Print MFT index information
-        //     std::cout << "Found!" << std::endl;
-        //     std::cout << "MFT Index Entry " << i << ":" << std::endl;
-        //     std::cout << "File ID: " << ks_archive_data.mft_index_data[i].file_id << std::endl;
-        //     std::cout << "Base ID: " << ks_archive_data.mft_index_data[i].base_id << std::endl;
-        // }
     }
 }

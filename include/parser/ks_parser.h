@@ -18,6 +18,12 @@ struct KSArchive
 };
 #pragma pack(pop)
 
+enum ArchiveId
+{
+    FileId,
+    BaseId
+};
+
 class KSParser
 {
 public:
@@ -25,6 +31,7 @@ public:
     ~KSParser() = default;
 
     KSArchive loadFromFile();
+    std::vector<uint8_t> extractMFTData(ArchiveId number_type, uint32_t number);
 
 private:
     void readHeader();
