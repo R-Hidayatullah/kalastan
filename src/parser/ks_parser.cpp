@@ -88,7 +88,6 @@ std::vector<uint8_t> KSParser::extractMFTData(ArchiveId number_type, uint32_t nu
     {
         throw std::runtime_error("Failed to seek to file offset!");
     }
-
     size_t mft_data_size = mft_entry.size;
     std::vector<uint8_t> buffer(mft_data_size);
 

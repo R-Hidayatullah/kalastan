@@ -8,6 +8,7 @@
 #include <vector>
 #include <iomanip>
 #include <stdexcept>
+#include <memory>
 
 #include <stdint.h>
 #include <cstring>
