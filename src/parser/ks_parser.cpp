@@ -1,4 +1,5 @@
 #include "parser/ks_parser.h"
+#include "gw2DatTools/inflateBuffer.h"
 
 KSParser::KSParser(const std::string &filePath)
 {
@@ -98,6 +99,74 @@ std::vector<uint8_t> KSParser::extractMFTData(ArchiveId number_type, uint32_t nu
     if (!fileStream.good())
     {
         throw std::runtime_error("Failed to read data into buffer!");
+    }
+
+    // Print the buffer size before decompression
+    std::cout << "\nBuffer size before decompression: " << buffer.size() << " bytes" << std::endl;
+
+    // Print the first 16 bytes of the original MFT data (before decompression) in hexadecimal
+    std::cout << "First 16 bytes of original MFT data (Hex): " << std::endl;
+    for (size_t i = 0; i < 16 && i < buffer.size(); ++i)
+    {
+        std::cout << std::hex << std::uppercase << std::setw(2) << std::setfill('0')
+                  << static_cast<int>(buffer[i]) << " ";
+    }
+    std::cout << std::endl;
+
+    // Print the first 16 bytes of the original MFT data (ASCII)
+    std::cout << "First 16 bytes of original MFT data (ASCII): " << std::endl;
+    for (size_t i = 0; i < 16 && i < buffer.size(); ++i)
+    {
+        if (std::isprint(buffer[i]))
+        {
+            std::cout << static_cast<char>(buffer[i]);
+        }
+        else
+        {
+            std::cout << '.';
+        }
+    }
+    std::cout << std::endl;
+    if (mft_entry.compression_flag != 0)
+    {
+
+        uint32_t output_size = 0;
+        uint32_t input_size = static_cast<uint32_t>(buffer.size());
+
+        // Call the inflateBuffer function
+        uint8_t *result = gw2dt::compression::inflateBuffer(reinterpret_cast<uint32_t *>(buffer.data()), input_size, output_size);
+
+        if (result == nullptr)
+        {
+            throw std::runtime_error("Decompression failed");
+        }
+
+        // Print the buffer size after decompression using printf
+        printf("\nBuffer size after decompression: %u bytes\n", output_size);
+
+        // Print the first 16 bytes of the decompressed data in hexadecimal
+        std::cout << "First 16 bytes of decompressed MFT data (Hex): " << std::endl;
+        for (size_t i = 0; i < 16 && i < output_size; ++i)
+        {
+            std::cout << std::hex << std::uppercase << std::setw(2) << std::setfill('0')
+                      << static_cast<int>(result[i]) << " ";
+        }
+        std::cout << std::endl;
+
+        // Print the first 16 bytes of the decompressed data in ASCII
+        std::cout << "First 16 bytes of decompressed MFT data (ASCII): " << std::endl;
+        for (size_t i = 0; i < 16 && i < output_size; ++i)
+        {
+            if (std::isprint(result[i]))
+            {
+                std::cout << static_cast<char>(result[i]);
+            }
+            else
+            {
+                std::cout << '.';
+            }
+        }
+        std::cout << std::endl;
     }
 
     // Return the buffer containing the file data
