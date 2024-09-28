@@ -15,6 +15,9 @@ int main()
         // Extract MFT data and save it into a variable
         std::vector<uint8_t> mft_data = parser.extractMFTData(ArchiveId::BaseId, 19);
 
+        // Print the buffer size before decompression
+        std::cout << "\nBuffer size before decompression: " << mft_data.size() << " bytes" << std::endl;
+
         // Print the first 16 bytes of the original MFT data (before decompression) in hexadecimal
         std::cout << "First 16 bytes of original MFT data (Hex): " << std::endl;
         for (size_t i = 0; i < 16 && i < mft_data.size(); ++i)
@@ -49,6 +52,9 @@ int main()
         {
             throw std::runtime_error("Decompression failed");
         }
+
+        // Print the buffer size after decompression using printf
+        printf("\nBuffer size after decompression: %u bytes\n", output_size);
 
         // Print the first 16 bytes of the decompressed data in hexadecimal
         std::cout << "First 16 bytes of decompressed MFT data (Hex): " << std::endl;

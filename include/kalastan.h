@@ -12,4 +12,6 @@
 
 #include <stdint.h>
 #include <cstring>
+
+#include <stdio.h>
 #endif // KALASTAN_H

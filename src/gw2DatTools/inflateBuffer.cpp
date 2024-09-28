@@ -1,7 +1,7 @@
 #include "gw2DatTools/inflateBuffer.h"
 
 #include <memory.h>
-
+#include <stdio.h>
 #include "gw2DatTools/inflateBufferUtils.h"
 
 namespace gw2dt
