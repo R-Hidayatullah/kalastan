@@ -134,7 +134,7 @@ std::vector<uint8_t> KSParser::extractMFTData(ArchiveId number_type, uint32_t nu
         uint32_t input_size = static_cast<uint32_t>(buffer.size());
 
         // Call the inflateBuffer function
-        uint8_t *result = gw2dt::compression::inflateBuffer(reinterpret_cast<uint32_t *>(buffer.data()), input_size, output_size);
+        uint8_t *result = gw2dt::compression::inflateBuffer(input_size, reinterpret_cast<uint32_t *>(buffer.data()), output_size);
 
         if (result == nullptr)
         {

@@ -135,7 +135,7 @@ namespace gw2dt
             }
         }
 
-        uint8_t *inflateBuffer(uint32_t *iInputTab, const uint32_t iInputSize, uint32_t &ioOutputSize)
+        uint8_t *inflateBuffer(uint32_t iInputSize, const uint32_t *iInputTab, uint32_t &ioOutputSize, uint8_t *ioOutputTab)
         {
             if (iInputTab == nullptr)
             {
@@ -148,19 +148,19 @@ namespace gw2dt
                 HuffmanTreeDictInitialized = true;
             }
 
-            uint8_t *anOutputTab = nullptr;
-
             try
             {
                 // Initialize state
                 State aState;
-                aState.input = iInputTab;
+                aState.input = reinterpret_cast<const uint32_t *>(iInputTab);
                 aState.inputSize = iInputSize;
                 aState.inputPos = 0;
 
                 aState.head = 0;
                 aState.bits = 0;
                 aState.buffer = 0;
+
+                aState.isEmpty = false;
 
                 // Skipping header & Getting size of the uncompressed data
                 needBits(aState, 32);
@@ -182,16 +182,16 @@ namespace gw2dt
 
                 ioOutputSize = anOutputSize;
 
-                anOutputTab = static_cast<uint8_t *>(malloc(sizeof(uint8_t) * anOutputSize));
+                ioOutputTab = static_cast<uint8_t *>(malloc(sizeof(uint8_t) * anOutputSize));
 
-                inflate_data(aState, anOutputTab, anOutputSize);
+                inflate_data(aState, ioOutputTab, anOutputSize);
 
-                return anOutputTab;
+                return ioOutputTab;
             }
             catch (std::exception &iException)
             {
-                free(anOutputTab);
-                anOutputTab = nullptr;
+                free(ioOutputTab);
+                ioOutputTab = nullptr;
                 ioOutputSize = 0;
 
                 throw iException; // Rethrow exception

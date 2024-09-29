@@ -159,275 +159,526 @@ namespace gw2dt
             memset(&aWorkingBitTab, 0xFF, MaxCodeBitsLength * sizeof(int16_t));
             memset(&aWorkingCodeTab, 0xFF, MaxSymbolValue * sizeof(int16_t));
 
-            fillTabsHelper(3, 0x0A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(3, 0x09, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(3, 0x08, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(4, 0x0C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(4, 0x0B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(4, 0x07, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(4, 0x00, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(5, 0xE0, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(5, 0x2A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(5, 0x29, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(5, 0x06, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(6, 0x4A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(6, 0x40, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(6, 0x2C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(6, 0x2B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(6, 0x28, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(6, 0x20, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(6, 0x05, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(6, 0x04, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(7, 0x49, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(7, 0x48, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(7, 0x27, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(7, 0x26, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(7, 0x25, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(7, 0x0D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(7, 0x03, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(8, 0x6A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(8, 0x69, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(8, 0x4C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(8, 0x4B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(8, 0x47, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(8, 0x24, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(9, 0xE8, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0xA0, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0x89, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0x88, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0x68, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0x67, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0x63, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0x60, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0x46, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(9, 0x23, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(10, 0xE9, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0xC9, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0xC0, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0xA9, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0xA8, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x8A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x87, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x80, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x66, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x65, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x45, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x44, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x43, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x2D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x02, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(10, 0x01, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(11, 0xE5, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0xC8, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0xAA, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0xA5, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0xA4, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0x8B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0x85, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0x84, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0x6C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0x6B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0x64, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0x4D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(11, 0x0E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(12, 0xE7, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(12, 0xCA, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(12, 0xC7, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(12, 0xA7, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(12, 0xA6, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(12, 0x86, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(12, 0x83, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(13, 0xE6, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(13, 0xE4, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(13, 0xC4, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(13, 0x8C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(13, 0x2E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(13, 0x22, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(14, 0xEC, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(14, 0xC6, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(14, 0x6D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(14, 0x4E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(15, 0xEA, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(15, 0xCC, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(15, 0xAC, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(15, 0xAB, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(15, 0x8D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(15, 0x11, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(15, 0x10, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(15, 0x0F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-
-            fillTabsHelper(16, 0xFF, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xFE, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xFD, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xFC, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xFB, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xFA, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF9, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF8, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF7, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF6, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF5, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF4, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF3, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF2, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF1, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xF0, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xEF, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xEE, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xED, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xEB, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xE3, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xE2, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xE1, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xDF, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xDE, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xDD, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xDC, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xDB, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xDA, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD9, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD8, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD7, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD6, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD5, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD4, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD3, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD2, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD1, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xD0, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xCF, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xCE, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xCD, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xCB, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xC5, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xC3, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xC2, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xC1, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xBF, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xBE, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xBD, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xBC, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xBB, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xBA, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB9, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB8, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB7, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB6, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB5, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB4, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB3, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB2, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB1, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xB0, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xAF, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xAE, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xAD, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xA3, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xA2, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0xA1, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x9F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x9E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x9D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x9C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x9B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x9A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x99, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x98, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x97, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x96, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x95, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x94, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x93, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x92, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x91, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x90, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x8F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x8E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x82, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x81, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x7F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x7E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x7D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x7C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x7B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x7A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x79, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x78, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x77, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x76, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x75, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x74, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x73, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x72, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x71, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x70, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x6F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x6E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x62, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x61, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x5F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x5E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x5D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x5C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x5B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x5A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x59, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x58, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x57, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x56, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x55, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x54, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x53, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x52, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x51, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x50, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x4F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x42, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x41, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x3F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x3E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x3D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x3C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x3B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x3A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x39, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x38, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x37, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x36, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x35, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x34, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x33, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x32, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x31, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x30, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x2F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x21, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x1F, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x1E, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x1D, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x1C, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x1B, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x1A, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x19, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x18, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x17, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x16, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x15, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x14, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x13, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
-            fillTabsHelper(16, 0x12, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
+            std::vector<uint8_t> ibits = {
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                9,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                11,
+                12,
+                12,
+                12,
+                12,
+                12,
+                12,
+                12,
+                13,
+                13,
+                13,
+                13,
+                13,
+                13,
+                14,
+                14,
+                14,
+                14,
+                15,
+                15,
+                15,
+                15,
+                15,
+                15,
+                15,
+                15,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+                16,
+            };
+            std::vector<uint8_t> isymbols = {
+                0x0A,
+                0x09,
+                0x08,
+                0x0C,
+                0x0B,
+                0x07,
+                0x00,
+                0xE0,
+                0x2A,
+                0x29,
+                0x06,
+                0x4A,
+                0x40,
+                0x2C,
+                0x2B,
+                0x28,
+                0x20,
+                0x05,
+                0x04,
+                0x49,
+                0x48,
+                0x27,
+                0x26,
+                0x25,
+                0x0D,
+                0x03,
+                0x6A,
+                0x69,
+                0x4C,
+                0x4B,
+                0x47,
+                0x24,
+                0xE8,
+                0xA0,
+                0x89,
+                0x88,
+                0x68,
+                0x67,
+                0x63,
+                0x60,
+                0x46,
+                0x23,
+                0xE9,
+                0xC9,
+                0xC0,
+                0xA9,
+                0xA8,
+                0x8A,
+                0x87,
+                0x80,
+                0x66,
+                0x65,
+                0x45,
+                0x44,
+                0x43,
+                0x2D,
+                0x02,
+                0x01,
+                0xE5,
+                0xC8,
+                0xAA,
+                0xA5,
+                0xA4,
+                0x8B,
+                0x85,
+                0x84,
+                0x6C,
+                0x6B,
+                0x64,
+                0x4D,
+                0x0E,
+                0xE7,
+                0xCA,
+                0xC7,
+                0xA7,
+                0xA6,
+                0x86,
+                0x83,
+                0xE6,
+                0xE4,
+                0xC4,
+                0x8C,
+                0x2E,
+                0x22,
+                0xEC,
+                0xC6,
+                0x6D,
+                0x4E,
+                0xEA,
+                0xCC,
+                0xAC,
+                0xAB,
+                0x8D,
+                0x11,
+                0x10,
+                0x0F,
+                0xFF,
+                0xFE,
+                0xFD,
+                0xFC,
+                0xFB,
+                0xFA,
+                0xF9,
+                0xF8,
+                0xF7,
+                0xF6,
+                0xF5,
+                0xF4,
+                0xF3,
+                0xF2,
+                0xF1,
+                0xF0,
+                0xEF,
+                0xEE,
+                0xED,
+                0xEB,
+                0xE3,
+                0xE2,
+                0xE1,
+                0xDF,
+                0xDE,
+                0xDD,
+                0xDC,
+                0xDB,
+                0xDA,
+                0xD9,
+                0xD8,
+                0xD7,
+                0xD6,
+                0xD5,
+                0xD4,
+                0xD3,
+                0xD2,
+                0xD1,
+                0xD0,
+                0xCF,
+                0xCE,
+                0xCD,
+                0xCB,
+                0xC5,
+                0xC3,
+                0xC2,
+                0xC1,
+                0xBF,
+                0xBE,
+                0xBD,
+                0xBC,
+                0xBB,
+                0xBA,
+                0xB9,
+                0xB8,
+                0xB7,
+                0xB6,
+                0xB5,
+                0xB4,
+                0xB3,
+                0xB2,
+                0xB1,
+                0xB0,
+                0xAF,
+                0xAE,
+                0xAD,
+                0xA3,
+                0xA2,
+                0xA1,
+                0x9F,
+                0x9E,
+                0x9D,
+                0x9C,
+                0x9B,
+                0x9A,
+                0x99,
+                0x98,
+                0x97,
+                0x96,
+                0x95,
+                0x94,
+                0x93,
+                0x92,
+                0x91,
+                0x90,
+                0x8F,
+                0x8E,
+                0x82,
+                0x81,
+                0x7F,
+                0x7E,
+                0x7D,
+                0x7C,
+                0x7B,
+                0x7A,
+                0x79,
+                0x78,
+                0x77,
+                0x76,
+                0x75,
+                0x74,
+                0x73,
+                0x72,
+                0x71,
+                0x70,
+                0x6F,
+                0x6E,
+                0x62,
+                0x61,
+                0x5F,
+                0x5E,
+                0x5D,
+                0x5C,
+                0x5B,
+                0x5A,
+                0x59,
+                0x58,
+                0x57,
+                0x56,
+                0x55,
+                0x54,
+                0x53,
+                0x52,
+                0x51,
+                0x50,
+                0x4F,
+                0x42,
+                0x41,
+                0x3F,
+                0x3E,
+                0x3D,
+                0x3C,
+                0x3B,
+                0x3A,
+                0x39,
+                0x38,
+                0x37,
+                0x36,
+                0x35,
+                0x34,
+                0x33,
+                0x32,
+                0x31,
+                0x30,
+                0x2F,
+                0x21,
+                0x1F,
+                0x1E,
+                0x1D,
+                0x1C,
+                0x1B,
+                0x1A,
+                0x19,
+                0x18,
+                0x17,
+                0x16,
+                0x15,
+                0x14,
+                0x13,
+                0x12,
+            };
+            for (size_t i = 0; i < ibits.size(); i++)
+            {
+                fillTabsHelper(ibits[i], isymbols[i], &aWorkingBitTab[0], &aWorkingCodeTab[0]);
+            }
 
             return buildHuffmanTree(HuffmanTreeDict, &aWorkingBitTab[0], &aWorkingCodeTab[0]);
         }

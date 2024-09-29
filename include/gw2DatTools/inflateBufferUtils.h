@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <stdexcept>
+#include <vector>
 
 namespace gw2dt
 {
@@ -22,13 +23,15 @@ namespace gw2dt
 
         struct State
         {
-            uint32_t *input;
+            const uint32_t *input;
             uint32_t inputSize;
             uint32_t inputPos;
 
             uint32_t head;
             uint32_t buffer;
             uint8_t bits;
+
+            bool isEmpty;
         };
 
         // Parse and build a huffmanTree

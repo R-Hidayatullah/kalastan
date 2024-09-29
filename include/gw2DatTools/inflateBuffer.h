@@ -23,7 +23,7 @@ namespace gw2dt
          *  @Throws:
          *    - gw2dt::exception::Exception in case of error
          */
-        uint8_t *inflateBuffer(uint32_t *iInputTab, const uint32_t iInputSize, uint32_t &ioOutputSize);
+        uint8_t *inflateBuffer(uint32_t iInputSize, const uint32_t *iInputTab, uint32_t &ioOutputSize, uint8_t *ioOutputTab = nullptr);
 
     }
 }
